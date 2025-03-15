@@ -2,3 +2,19 @@
 
 Since my topic is Ninja Village, I have decided to go with the theme of Naruto—a popular anime about ninjas. In the show, there are ninjas with specific ranks.
 As they learn and work, their rank and role as a ninja change. I will utilize this to create an inheritance hierarchy.
+
+Ninja - base class -> this class should be changed to abstract (but theoreticaly this lab is before the lab where we will learn to use it propely so it is not)
+  It has 4 properties:
+    Name -> string - Name of the ninja
+      Protected - for easier later usedge in methods in inharited classes
+    Health -> int - Value of the health
+      Private - I want to use seter and gether to control the health values while using methods
+    ChakraLevel -> int - Value of the Chakra Level
+      Private - I want to use seter and gether to control the chakra level while using methods
+  Three methods:
+    Train: Uses Chakra and incrises base atack of ninja -(in future for diffrent ranks diffret effects of training)
+    Attack:
+    Meditate:
+  
+  
+  
