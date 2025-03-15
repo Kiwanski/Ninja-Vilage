@@ -12,7 +12,7 @@ Ninja - base class -> this class should be changed to abstract (but theoreticaly
     ChakraLevel -> int - Value of the Chakra Level
       Private - I want to use seter and gether to control the chakra level while using methods
   Three methods:
-    Train: Uses Chakra and incrises base atack of ninja -(in future for diffrent ranks diffret effects of training)
+    Train: Uses Chakra and incrises base atack of ninja /diff- (in future for diffrent ranks diffret effects of training)
     Attack:
     Meditate:
   
