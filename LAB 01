@@ -1,8 +1,17 @@
 1. Design an inheritance hierarchy with at least five classes arranged in at least three levels of inheritance.
 
-Since my topic is Ninja Village, I have decided to go with the theme of Naruto—a popular anime about ninjas. In the show, there are ninjas with specific ranks.
-As they learn and work, their rank and role as a ninja change. I will utilize this to create an inheritance hierarchy.
+*Since my topic is Ninja Village, I have decided to go with the theme of Naruto—a popular anime about ninjas. In the show, there are ninjas with specific ranks.
+As they learn and work, their rank and role as a ninja change. I will utilize this to create an inheritance hierarchy. I added future ideas for improving the project,
+but it depends on future classes and requirements for this project
 
+*Hierarchy design
+Ninja (Base Class)
+├── Genin (Class Derived from Ninja)
+├── Chunin (Class Derived from Ninja)
+│   └── Jonin (Class Derived from Chunin) 
+├── MedicalNinja (Class Derived from Ninja)
+
+*Decsriptons of classes:
 Ninja - base class -> this class should be changed to abstract (but theoreticaly this lab is before the lab where we will learn to use it propely so it is not). It
 contains base properties and methods.
   It has 4 properties:
@@ -13,16 +22,33 @@ contains base properties and methods.
     ChakraLevel -> int - Value of the Chakra Level
       Private - I want to use seter and gether to control the chakra level while using methods
   It has 3 methods:
-    Train: Incrises base atack of ninja (in future: for diffrent ranks - diffret effects of training) 
-    Attack: Uses Atack - text message ( in future posiblity to add attacking other ninjas)
-    Meditate: Allows to mediate (In future Allows for restoring Chakra Level and Helth Level)
+    Train: Text mesage  (Future idea:  Incrises base atack of ninja , for diffrent ranks - diffret effects of training) 
+    Attack: Uses Atack - text message (Future idea: posiblity to add attacking other ninjas)
+    Meditate: Allows to mediate - text message (Future idea: allows for restoring Chakra Level and Helth Level)
 
-Genin - Derived Classes from Ninja -> student ninja who has his teacher ( Sensei ) that helps him learn new techichue (jutsu)
+Genin - Derived Classe from Ninja -> student ninja who has his teacher ( Sensei ) that helps him learn new techichue (jutsu)
     It has new propertie:
       Sensai Name -> string -Name of the sensei
     It has new method:
-      Learned new Jutsu -> It incrises (bigger chakra -> bigger increase) base atack of ninja
+      Learned new Jutsu -> (Future idea: It incrises (bigger chakra -> bigger increase) base atack of ninja)
 
-Jonin - Derived Classes from Ninja -> It the 
-  
-  
+Chunin - Derived Class from Ninja -> It the ninja that doesnt have sesnei anymore and now is
+doing missions.
+    It has new propertie:
+      Misions complited -> int - number of comlited missions
+    It has new method:
+      Doing mission -> text that this ninja is on a mision
+
+Jonin - Dervied Class from Chunin -> This ninja can be a team lider on an mission
+    It has new propertie:
+      Is team lider -> bool - is he a team lider currently or not
+    It has new method:
+      Is this ninja a lider -> Checking if he is a lider or not and displeying it
+
+Medical Ninja - Derived Class from Ninja -> This ninja is specialized in medical justus
+    It has new propertie:
+      Healing Power -> int - bigger healing power = better heling
+    It has new method:
+      Healing -> Text about helaing
+
+*
