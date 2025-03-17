@@ -39,7 +39,7 @@ doing missions.
     It has new method:
       Doing mission -> text that this ninja is on a mision
 
-Jonin - Dervied Class from Chunin -> This ninja can be a team lider on an mission
+Jonin - Dervied Class from Chunin -> This ninja can be a team lider on an missions
     It has new propertie:
       Is team lider -> bool - is he a team lider currently or not
     It has new method:
