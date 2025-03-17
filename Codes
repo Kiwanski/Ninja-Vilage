@@ -1,0 +1,223 @@
+using home01;
+using System;
+using System.Collections.Generic;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        // List of Ninja objects
+        List<Ninja> ninjas = new List<Ninja>
+        {
+            new Genin("Naruto", 100, 50, "Kakashi"),
+            new Chunin("Sakura", 120, 70, 10),
+            new Jonin("Kakashi", 150, 100, 50, true),
+            new MedicalNinja("Tsunade", 200, 150, 80)
+        };
+
+        // Iterate through the list and call methods
+        foreach (var ninja in ninjas)
+        {
+            ninja.Train();
+            ninja.Attack();
+            ninja.Meditate();
+
+            if (ninja is Genin genin)
+            {
+                genin.learnJutsu();
+            }
+            if (ninja is Chunin chunin)
+            {
+                chunin.doMission();
+            }
+            if (ninja is Jonin jonin)
+            {
+                jonin.isleader();
+            }
+            if (ninja is MedicalNinja medicalNinja)
+            {
+                medicalNinja.Heal();
+            }
+
+            Console.WriteLine();
+        }
+
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace home01
+{
+    public class Ninja
+    {
+        // Properties 
+        protected string Name;
+        private int health;
+        private int chakraLevel;
+
+        // Constructor
+        public Ninja(string name, int health, int chakraLevel)
+        {
+            Name = name;
+            this.health = health;
+            this.chakraLevel = chakraLevel;
+        }
+
+        // Geter and Seter for Health and ChakraLevel
+        protected int Health
+        {
+            get { return health; }
+            set { health = value < 0 ? 0 : value; } // Prevents negative health
+        }
+
+        protected int ChakraLevel
+        {
+            get { return chakraLevel; }
+            set { chakraLevel = value < 0 ? 0 : value; } // Prevents negative chakra
+        }
+
+        // Public methods
+        public void Train()
+        {
+            Console.WriteLine($"{Name} is training!");
+        }
+
+        public void Attack()    
+        {
+            Console.WriteLine($"{Name} is attacking!");     
+        }
+
+        public void Meditate()
+        {
+            Console.WriteLine($"{Name} is meditating to restore chakra!");
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace home01
+{
+    class Genin : Ninja
+    {
+        // Additional property
+        protected string SenseiName;
+
+        // Constructor
+        public Genin(string name, int health, int chakraLevel, string senseiName) : base(name, health, chakraLevel)
+        {
+            SenseiName = senseiName;
+        }
+
+        // Additional method
+        public void learnJutsu()
+        {
+            Console.WriteLine($"{Name} is learning a new jutsu from {SenseiName}!");
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace home01
+{
+    class Chunin : Ninja
+    {
+        // Additional property
+        private int missionsCompleted;
+
+        // Constructor
+        public Chunin(string name, int health, int chakraLevel, int missionsCompleted)
+            : base(name, health, chakraLevel)
+        {
+            this.missionsCompleted = missionsCompleted;
+        }
+
+        // Additional method
+        public void doMission()
+        {
+            Console.WriteLine($"{Name} is on a mission!");
+        }
+    }   
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace home01
+{
+    class Jonin : Chunin
+    {
+        // Additional property
+        private bool teamLeader;
+
+        // Constructor
+        public Jonin(string name, int health, int chakraLevel, int missionsCompleted, bool teamLeader)
+            : base(name, health, chakraLevel, missionsCompleted)
+        {
+            this.teamLeader = teamLeader;
+        }
+
+        // Additional method
+        public void isleader()
+        {
+            if (teamLeader)
+            {
+                Console.WriteLine($"{Name} is leading a team!");
+            }
+            else
+            {
+                Console.WriteLine($"{Name} is currently not leading a team.");
+            }
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace home01
+{
+    class MedicalNinja : Ninja
+    {
+        // Additional property
+        private int healingPower;
+
+        // Constructor
+        public MedicalNinja(string name, int health, int chakraLevel, int healingPower) : base(name, health, chakraLevel)
+        {
+            this.healingPower = healingPower;
+        }
+
+        // Additional method
+        public void Heal()
+        {
+            Console.WriteLine($"{Name} is healing with {healingPower} power!");
+        }
+
+    }
+}
+
+
